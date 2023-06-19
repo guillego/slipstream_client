@@ -15,7 +15,7 @@ defmodule SlipstreamClient.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {Client.Application, []}
+      mod: {SlipstreamClient.Application, []}
     ]
   end
 
