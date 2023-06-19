@@ -1,9 +1,9 @@
-defmodule Client.MixProject do
+defmodule SlipstreamClient.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :client,
+      app: :slipstream_client,
       version: "0.1.0",
       elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,

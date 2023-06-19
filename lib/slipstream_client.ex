@@ -1,6 +1,6 @@
-defmodule Client do
+defmodule SlipstreamClient do
   @moduledoc """
-  Documentation for `Client`.
+  Documentation for `SlipstreamClient`.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule Client do
 
   ## Examples
 
-      iex> Client.hello()
+      iex> SlipstreamClient.hello()
       :world
 
   """
