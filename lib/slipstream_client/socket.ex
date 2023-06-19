@@ -13,10 +13,7 @@ defmodule SlipstreamClient.Socket do
 
   @impl Slipstream
   def init(config) do
-    opts = [
-      uri: config[:url],
-    ]
-
+    Logger.info "Requesting connection to socket #{config[:uri]}"
     socket = connect!(config)
 
     {:ok, socket}
@@ -24,12 +21,14 @@ defmodule SlipstreamClient.Socket do
 
   @impl Slipstream
   def handle_connect(socket) do
+    Logger.info "Connected to channel, joining topic #{@topic}"
     {:ok, join(socket, @topic)}
   end
 
   @impl Slipstream
   def handle_join(@topic, _join_response, socket) do
     # an asynchronous push with no reply:
+    Logger.info "Successfully joined #{@topic}, sending HELLO"
     push(socket, @topic, "hello", %{})
 
     {:ok, socket}
