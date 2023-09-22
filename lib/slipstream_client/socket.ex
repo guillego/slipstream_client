@@ -36,7 +36,7 @@ defmodule SlipstreamClient.Socket do
 
   @impl Slipstream
   def handle_disconnect(reason, socket) do
-    Logger.info "Disconnected, idk. Reason #{reason}"
+    Logger.info "Disconnected, idk. Reason #{inspect(reason)}"
     reconnect(socket)
   end
 
